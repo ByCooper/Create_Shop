@@ -6,8 +6,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ru.skypro.homework.dto.Ads;
-import ru.skypro.homework.dto.CreateOrUpdateAd;
+import ru.skypro.homework.dto.AdsDTO;
+import ru.skypro.homework.dto.CreateOrUpdateAdDTO;
 import java.io.IOException;
 
 @Slf4j
@@ -18,7 +18,7 @@ import java.io.IOException;
 public class AdsController {
 
     @GetMapping
-    public ResponseEntity<Ads> getAllAds() {
+    public ResponseEntity<AdsDTO> getAllAds() {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else {
@@ -28,7 +28,7 @@ public class AdsController {
     }
 
     @PostMapping
-    public ResponseEntity<CreateOrUpdateAd> addAd(@RequestBody Ads ads) {
+    public ResponseEntity<CreateOrUpdateAdDTO> addAd(@RequestBody AdsDTO ads) {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else {
@@ -38,7 +38,7 @@ public class AdsController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<CreateOrUpdateAd> getAds(@PathVariable Integer id) {
+    public ResponseEntity<CreateOrUpdateAdDTO> getAds(@PathVariable Integer id) {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else if () {
@@ -64,7 +64,7 @@ public class AdsController {
     }
 
     @PatchMapping(path = "/{id}")
-    public ResponseEntity<CreateOrUpdateAd> updateAds(@PathVariable Integer id) {
+    public ResponseEntity<CreateOrUpdateAdDTO> updateAds(@PathVariable Integer id) {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else if () {
@@ -78,7 +78,7 @@ public class AdsController {
     }
 
     @GetMapping(path = "/me")
-    public ResponseEntity<Ads> getAdsMe(@RequestParam("login") String login) {
+    public ResponseEntity<AdsDTO> getAdsMe(@RequestParam("login") String login) {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else if () {
@@ -88,8 +88,8 @@ public class AdsController {
     }
 
     @PatchMapping(path = "/{id}/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<CreateOrUpdateAd> updateImage(@PathVariable Integer id,
-                                           @RequestParam MultipartFile avatar) throws IOException {
+    public ResponseEntity<CreateOrUpdateAdDTO> updateImage(@PathVariable Integer id,
+                                                           @RequestParam MultipartFile avatar) throws IOException {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else if () {
