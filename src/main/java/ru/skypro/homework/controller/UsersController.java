@@ -7,8 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ru.skypro.homework.dto.NewPassword;
-import ru.skypro.homework.dto.Register;
+import ru.skypro.homework.dto.NewPasswordDTO;
+import ru.skypro.homework.dto.RegisterDTO;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import java.io.IOException;
 public class UsersController {
 
     @PostMapping(path = "/set_passwords")
-    public ResponseEntity<NewPassword> setPassword(@RequestBody String password) {
+    public ResponseEntity<NewPasswordDTO> setPassword(@RequestBody String password) {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else if () {
@@ -32,7 +32,7 @@ public class UsersController {
     }
 
     @GetMapping(path = "/me")
-    public ResponseEntity<Register> getUser(@RequestParam("login") String login) {
+    public ResponseEntity<RegisterDTO> getUser(@RequestParam("login") String login) {
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else {
@@ -42,7 +42,7 @@ public class UsersController {
     }
 
     @PatchMapping(path = "/me")
-    public ResponseEntity<Register> updateUser(@RequestBody Register register){
+    public ResponseEntity<RegisterDTO> updateUser(@RequestBody RegisterDTO registerDTO){
 //        if () {
 //            return ResponseEntity.ok().build();
 //        } else {
