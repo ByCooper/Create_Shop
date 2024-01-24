@@ -18,3 +18,5 @@ public interface AdMapper {
     Ad extendedAdDTOToAd(ExtendedAdDTO extendedAdDTO);
     ExtendedAdDTO adToExtendedAdDTO(Ad model);
 }
+
+//@Mapping(target = "data", expression = "java(file.getBytes())")
